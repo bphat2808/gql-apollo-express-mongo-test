@@ -12,9 +12,14 @@ mongoose.connect(URL, {
 }, ()=>console.log("DB CONNECTED"))
 
 
+const app = express ()
+
+app.get('/', (req, res) => {
+    res.send('Hello SAWASDEE !')
+  })
 
 const startServer = async() => {
-    const app = express ()
+    
     const apolloServer = new ApolloServer({
         typeDefs, 
         resolvers
